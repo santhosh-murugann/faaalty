@@ -1,0 +1,62 @@
+{
+  "name": "faaalty",
+  "displayName": "Faaalty",
+  "description": "Get faaatified — plays a sound when a terminal command fails.",
+  "version": "0.1.0",
+  "publisher": "Santhoshm",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santhosh-murugann/faaalty"
+  },
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "keywords": [
+    "terminal",
+    "sound",
+    "error",
+    "alert",
+    "faaah"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "faaalty.testSound",
+        "title": "Test Sound",
+        "category": "Faaalty"
+      }
+    ],
+    "configuration": {
+      "title": "Faaalty",
+      "properties": {
+        "faaalty.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable error sound alerts."
+        },
+        "faaalty.cooldownMs": {
+          "type": "number",
+          "default": 2000,
+          "minimum": 0,
+          "description": "Minimum milliseconds between consecutive alerts."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@vscode/vsce": "^3.7.1"
+  }
+}
